@@ -1,5 +1,5 @@
 export default [
-  { path: '/login', layout: false, name: '登录', component: './Login' },
+  { path: '/login', layout: false, component: './Login' },
   { path: '/welcome', name: '欢迎', icon: 'smile', component: './Welcome' },
   {
     path: '/admin',
