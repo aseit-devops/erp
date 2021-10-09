@@ -1,7 +1,7 @@
 import { DefaultFooter } from '@ant-design/pro-layout';
 
 export default () => {
-  const defaultMessage = '炜呈智能电力科技（杭州）有限公司';
+  const defaultMessage = '运维服务中心';
   const currentYear = new Date().getFullYear();
   return (
     <DefaultFooter

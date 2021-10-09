@@ -1,6 +1,6 @@
 import {
   LockOutlined,
-  UserOutlined,
+  UserOutlined
 } from '@ant-design/icons';
 import { Alert, message, Tabs } from 'antd';
 import React, { useState } from 'react';
@@ -67,6 +67,7 @@ const Login: React.FC = () => {
     setSubmitting(false);
   };
 
+  const { status } = userLoginState;
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -77,7 +78,7 @@ const Login: React.FC = () => {
               <span className={styles.title}>Ant Design</span>
             </Link>
           </div>
-          <div className={styles.desc}>{'资源管理系统'}</div>
+          <div className={styles.desc}>{'Ant Design 是西湖区最具影响力的 Web 设计规范'}</div>
         </div>
 
         <div className={styles.main}>
@@ -106,36 +107,38 @@ const Login: React.FC = () => {
               <Tabs.TabPane key="account" tab={'登 录'} />
             </Tabs>
             {status === 'error' && (
-              <LoginMessage content={'错误的用户名和密码(admin/ant.design)'} />
+              <LoginMessage content={'错误的用户名和密码(admin/123)'} />
             )}
-            <ProFormText
-              name="username"
-              fieldProps={{
-                size: 'large',
-                prefix: <UserOutlined className={styles.prefixIcon} />,
-              }}
-              placeholder={'用户名: admin or user'}
-              rules={[
-                {
-                  required: true,
-                  message: '用户名是必填项！',
-                },
-              ]}
-            />
-            <ProFormText.Password
-              name="password"
-              fieldProps={{
-                size: 'large',
-                prefix: <LockOutlined className={styles.prefixIcon} />,
-              }}
-              placeholder={'密码: ant.design'}
-              rules={[
-                {
-                  required: true,
-                  message: '密码是必填项！',
-                },
-              ]}
-            />
+            <>
+              <ProFormText
+                name="username"
+                fieldProps={{
+                  size: 'large',
+                  prefix: <UserOutlined className={styles.prefixIcon} />,
+                }}
+                placeholder={'用户名: admin or user'}
+                rules={[
+                  {
+                    required: true,
+                    message: '用户名是必填项！',
+                  },
+                ]}
+              />
+              <ProFormText.Password
+                name="password"
+                fieldProps={{
+                  size: 'large',
+                  prefix: <LockOutlined className={styles.prefixIcon} />,
+                }}
+                placeholder={'密码: 123'}
+                rules={[
+                  {
+                    required: true,
+                    message: '密码是必填项！',
+                  },
+                ]}
+              />
+            </>
             <div
               style={{
                 marginBottom: 24,
