@@ -1,12 +1,5 @@
 export default [
-  {
-    path: '/user',
-    layout: false,
-    routes: [
-      { path: '/user', routes: [{ name: '登录', path: '/user/login', component: './user/Login' }] },
-      { component: './404' },
-    ],
-  },
+  { path: '/login', layout: false, name: '登录', component: './Login' },
   { path: '/welcome', name: '欢迎', icon: 'smile', component: './Welcome' },
   {
     path: '/admin',
@@ -20,24 +13,24 @@ export default [
     ],
   },
   {
-    path: '/admin',
+    path: '/task',
     name: '事务流程',
     icon: 'crown',
     access: 'canAdmin',
     component: './Admin',
     routes: [
-      { path: '/admin/sub-page', name: '二级管理页', icon: 'smile', component: './Welcome' },
+      { path: '/task/sub-page', name: '二级管理页', icon: 'smile', component: './Welcome' },
       { component: './404' },
     ],
   },
   {
-    path: '/admin',
+    path: '/permission',
     name: '权限管理',
     icon: 'crown',
     access: 'canAdmin',
     component: './Admin',
     routes: [
-      { path: '/admin/sub-page', name: '二级管理页', icon: 'smile', component: './Welcome' },
+      { path: '/permission/sub-page', name: '二级管理页', icon: 'smile', component: './Welcome' },
       { component: './404' },
     ],
   },
